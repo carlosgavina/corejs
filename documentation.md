@@ -128,7 +128,6 @@ var Note = new $$.Data({
     request: "notes"
   });
 
-
 // Uses the "notes" configured in our app in the "Using an Api" example
 // or for lazy people, matches: api.example.com/notes/
 Note.push();

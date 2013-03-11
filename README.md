@@ -35,10 +35,9 @@ var NotesApp = new $$.App({
     });
 ```
 
-## <a href="">Documentation</a>
+## [Documentation](documentation.md)
 
-I try to have this as documented as possible, but not all features are explained. See  <a href="">Documentation</a>documentation</a>.
-
+I try to have this as documented as possible, but not all features are explained. See [Documentation](documentation.md).
 
 
 ## Thanks etc.
