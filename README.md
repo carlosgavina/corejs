@@ -14,7 +14,7 @@ I could say a million reasons why we need another javascript framework, but real
 
 ## Main Features
 
-* Super tiny (13kb)
+* Super tiny (13kb minified, 4kb gzipped!)
 * Event driven
 * Clunky code
 * One dependency, <a href="http://zeptojs.com/">Zepto</a> (Recommended) or <a href="http://jquery.com/">jQuery</a>
@@ -29,12 +29,12 @@ Creating an App in Core.js is faster than eating a peanut, here's how:
 /* App Config */
 
 var NotesApp = new $$.App({
-        name : "notesapp",
-        Router : {
-            "Signup"        : "/signup",
-            "Article"       : "/article/{id}",
-            "EditArticle"   : "/article/{id}/edit"
-        }
+      name    : "notesapp",
+      Router  : {
+        "Signup"        : "/signup",
+        "Article"       : "/article/{id}",
+        "EditArticle"   : "/article/{id}/edit"
+      }
     });
 ```
 
@@ -48,23 +48,15 @@ All Core.js objects are events enabled,
 /* App Config */
 
 NotesApp.on("Router:Default", function( e, data ) {
-
-    // code for the default route
-
+  // code for the default route, the root for the website ( example.com/ )
 });
-
 
 NotesApp.on("Router:Article", function( e, data ) {
-
-    // Prints to the console the 'id' value from the url.
-
-    console.log( data.id );
-
+  // Prints to the console the 'id' value from the url, ( example.com/#/article/123 )
+  console.log( data.id );
 });
 
-
-/* The app will only listen Router events after you use the 'start' method */
-
+/* The app will only listen Router events after the 'start' method */
 NotesApp.start();
 
 ```
