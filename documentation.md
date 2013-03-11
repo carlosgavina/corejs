@@ -3,6 +3,14 @@
 __Current Version:__ 0.2.2
 
 
+## "I want to" index
+
+* [Documentation](#creating-an-app)Make an App
+* [Documentation](#catching-router-events)Use the Router
+* [Documentation](##using-an-api--api-)Use an storage to store data
+
+
+
 ## Creating an App
 
 Creating an App in Core.js is faster than eating a peanut, here's how:
