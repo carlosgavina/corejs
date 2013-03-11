@@ -12,7 +12,6 @@ __Current Version:__ 0.2.2
 * [Use an Api](#using-an-api--api-)
 
 
-
 ## Creating an App
 
 Creating an App in Core.js is faster than eating a peanut, here's how:
