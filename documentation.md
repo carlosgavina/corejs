@@ -5,9 +5,9 @@ __Current Version:__ 0.2.2
 
 ## "I want to" index
 
-* [Documentation](#creating-an-app)Make an App
-* [Documentation](#catching-router-events)Use the Router
-* [Documentation](##using-an-api--api-)Use an storage to store data
+* [Make an App](#creating-an-app)
+* [Use the Router](#catching-router-events)
+* [Use an storage to store data](##using-an-api--api-)
 
 
 
