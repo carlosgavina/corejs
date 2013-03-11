@@ -151,3 +151,14 @@ Note.on("Change", function( e, d ) {
 });
 
 ```
+
+Available Events:
+
+* Change
+* Change:`Attribute Name`
+* Pull:Success
+* Pull:Error
+* Pull:Timeout
+* Push:Sucess
+* Push:Error
+* Push:Timeout
