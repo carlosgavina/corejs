@@ -165,7 +165,7 @@ var postNotes = new NotesApp.Api.post("notes", {
 
 ```
 
-### Listen for Api request events
+### Listening for Api request events
 
 To catch Api requests events just use the .on method as such:
 
