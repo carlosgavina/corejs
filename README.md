@@ -62,3 +62,10 @@ NotesApp.on("Router:Article", function( e, data ) {
 NotesApp.start();
 
 ```
+
+## Thanks etc.
+
+* to <a href="https://github.com/Couto">couto</a> for <a href="https://github.com/Couto/Blueprint">Blueprint</a>
+* to <a href="https://github.com/magalhini">magalhini</a> and <a href="https://github.com/gnclmorais">gnclmorais</a>
+
+You guys are awesome.
