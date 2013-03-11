@@ -41,7 +41,7 @@ var NotesApp = new $$.App({
 
 ### Catching Router Events
 
-All Core.js objects are events enabled,
+All Core.js objects are events enabled, a new $$.App object stores important global events like routing.
 
 
 ```js
@@ -49,6 +49,8 @@ All Core.js objects are events enabled,
 
 NotesApp.on("Router:Default", function( e, data ) {
   // code for the default route, the root for the website ( example.com/ )
+  // this refers to the parent element, NotesApp
+  console.log( this );
 });
 
 NotesApp.on("Router:Article", function( e, data ) {
