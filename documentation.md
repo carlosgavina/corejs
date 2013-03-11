@@ -7,7 +7,7 @@ __Current Version:__ 0.2.2
 
 * [Make an App](#creating-an-app)
 * [Use the Router](#catching-router-events)
-* [Use an storage to store data](##using-an-api--api-)
+* [Use an Api](##using-an-api--api-)
 
 
 
