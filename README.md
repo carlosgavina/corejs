@@ -1,6 +1,6 @@
 # Core.js
 
-__Current Version:__ 0.2.1
+__Current Version:__ 0.2.2
 
 A tiny (13kb) and pointless javascript framework for even tinier web apps.
 
