@@ -33,7 +33,7 @@ You are all set, next lets see how you can listen for Router (url) changes.
 
 ### Catching Router Events
 
-All Core.js objects are events enabled, a new $$.App object stores important global events like routing.
+All Core.js objects are events enabled, a new `$$.App` object stores important global events like routing.
 
 
 ```js
@@ -55,10 +55,74 @@ NotesApp.start();
 
 ```
 
+## Using Data and Local Storage `$$.Data`
 
-## Using an Api ( $$.Api )
+With `$$.Data` you can manage data, store it in the browser local storage and send it to an [Api](#linking-data-with-the-api)
 
-You can configure endpoints for an Api in the $$.App contructor ( or by using the $$.Api object )
+Creating a `$$.Data` object, easier than reading.
+
+```js
+/* create a $$.Data object */
+// passing an id enables localStorage for this object automatically
+
+var Note = new $$.Data({
+    id: "MyNote"
+    attributes: {
+      title : "Default Title"
+    }
+  });
+
+// set a new title attribute
+Note.set("title", "My Note Title");
+
+// get the title attribute
+Note.get("title", "My Note Title");
+
+```
+
+Listening for events on a `$$.Data` object:
+
+```js
+/* create a $$.Data object */
+// continues from previous example
+
+// Detect a specific attribute change
+Note.on("Change:title", function( e, d ) {
+  // the "title" attribute was changed
+});
+
+```
+
+
+#### Options:
+
+* id
+* attributes
+
+
+#### Methods:
+
+* set
+* get
+* pull
+* push
+
+
+#### Events:
+
+* Change
+* Change:`Attribute Name`
+* Pull:Success
+* Pull:Error
+* Pull:Timeout
+* Push:Sucess
+* Push:Error
+* Push:Timeout
+
+
+## Using an Api  `$$.Api`
+
+You can configure endpoints for an Api in the `$$.App` contructor ( or by using the `$$.Api` object )
 
 ```js
 /* Configuring an Api in your App */
@@ -118,16 +182,16 @@ getNotes.on("Error", function( e, d ) {
 
 ```
 
-Available Events:
+#### Events:
 
 * Success
 * Error
 * Timeout
 
 
-### Linking $$.Data with the Api
+### Linking `$$.Data` with the Api
 
-To make things even more powerful, Core.js lets you link an Api request to a $$.Data object:
+To make things even more powerful, Core.js lets you link an Api request to a `$$.Data` object:
 
 ```js
 /* Link an Api request to a $$.Data */
@@ -152,13 +216,4 @@ Note.on("Change", function( e, d ) {
 
 ```
 
-Available Events:
 
-* Change
-* Change:`Attribute Name`
-* Pull:Success
-* Pull:Error
-* Pull:Timeout
-* Push:Sucess
-* Push:Error
-* Push:Timeout
