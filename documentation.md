@@ -1,6 +1,6 @@
 # Core.js Documentation
 
-__Current Version:__ 0.2.3
+__Current Version:__ 0.2.6b
 
 
 ## "I want to" index
@@ -12,7 +12,7 @@ __Current Version:__ 0.2.3
 * [Use an Api](#using-an-api--api)
 
 
-## Creating an App
+## Creating an App `$$.App`
 
 Creating an App in Core.js is faster than eating a peanut, here's how:
 
@@ -22,9 +22,13 @@ Creating an App in Core.js is faster than eating a peanut, here's how:
 var NotesApp = new $$.App({
       name    : "notesapp",
       Router  : {
-        "Signup"        : "/signup",
-        "Article"       : "/article/{id}",
-        "EditArticle"   : "/article/{id}/edit"
+
+        // route match          : event fired
+
+        "/signup"               : "Signup",
+        "/article/{id}"         : "Article",
+        "/article/{id}/edit"    : "EditArticle"
+
       }
     });
 ```
@@ -34,7 +38,7 @@ You are all set, next lets see how you can listen for Router (url) changes.
 
 ### Catching Router Events
 
-All Core.js objects are events enabled, a new `$$.App` object stores important global events like routing.
+All Core.js objects are Events enabled, a new `$$.App` object stores important global events, such as the Routing, or in english, detects changes in the UL and fires events accordingly.
 
 
 ```js
@@ -42,7 +46,7 @@ All Core.js objects are events enabled, a new `$$.App` object stores important g
 
 NotesApp.on("Router:Default", function( e, data ) {
   // code for the default route, the root for the website ( example.com/ )
-  // this refers to the parent element, NotesApp
+  // this refers to the parent object, NotesApp
   console.log( this );
 });
 
@@ -84,7 +88,6 @@ Note.get("title", "My Note Title");
 Listening for events on a `$$.Data` object:
 
 ```js
-/* create a $$.Data object */
 // continues from previous example
 
 // Detect a specific attribute change
@@ -201,7 +204,9 @@ var Note = new $$.Data({
     request: "notes"
   });
 
-// Uses the "notes" configured in our app in the "Using an Api" example
+
+// With the .push method, the attributes for this $$.Data object are sent by POST
+// to the URL configured in our app in the "Using an Api" example
 // or for lazy people, matches: api.example.com/notes/
 Note.push();
 

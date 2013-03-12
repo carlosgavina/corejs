@@ -1,8 +1,8 @@
 # Core.js
 
-__Current Version:__ 0.2.3
+__Current Version:__ 0.2.6b
 
-A tiny (13kb) and pointless javascript framework for even tinier web apps.
+A tiny (15kb) and pointless javascript framework for even tinier web apps.
 
 
 ## Why?
@@ -12,7 +12,7 @@ I could say a million reasons why we need another javascript framework, but real
 
 ## Main Features
 
-* Super tiny (13kb minified, 4kb gzipped!)
+* Super tiny (15kb minified, 5kb gzipped!)
 * Event driven
 * One dependency, <a href="http://zeptojs.com/">Zepto</a> (Recommended) or <a href="http://jquery.com/">jQuery</a>
 * Clunky code
@@ -28,9 +28,9 @@ Creating an App in Core.js is faster than eating a peanut, here's how:
 var NotesApp = new $$.App({
       name    : "notesapp",
       Router  : {
-        "Signup"        : "/signup",
-        "Article"       : "/article/{id}",
-        "EditArticle"   : "/article/{id}/edit"
+        "/signup"        		: "Signup",
+        "/article/{id}"  		: "Article",
+        "/article/{id}/edit"   	: "EditArticle"
       }
     });
 ```
