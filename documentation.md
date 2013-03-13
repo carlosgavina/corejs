@@ -5,7 +5,7 @@ __Current Version:__ 0.2.8c
 
 ## "I want to" index
 
-* [Make an App](#creating-an-app)
+* [Make an App](#creating-an-app-app)
 * [Use the Router](#catching-router-events)
 * [Manage Data](#using-data-and-local-storage-data)
 * [Use Local Storage](#using-data-and-local-storage-data)
