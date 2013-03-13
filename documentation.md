@@ -1,6 +1,6 @@
 # Core.js Documentation
 
-__Current Version:__ 0.2.6d
+__Current Version:__ 0.2.8c
 
 
 ## "I want to" index
@@ -9,6 +9,8 @@ __Current Version:__ 0.2.6d
 * [Use the Router](#catching-router-events)
 * [Manage Data](#using-data-and-local-storage-data)
 * [Use Local Storage](#using-data-and-local-storage-data)
+* [Use Templates](#using-templates--microtemplate)
+* [Create a View](#creating-a-view--view)
 * [Use an Api](#using-an-api--api)
 
 
@@ -123,6 +125,80 @@ Note.on("Change:title", function( e, d ) {
 * Push:Error
 * Push:Timeout
 
+
+## Using Templates  `$$.Microtemplate`
+
+`$$.Microtemplate` is a tiny and fast logic-less template engine that uses the already famous {{musthash}} syntax.
+Unlike most other template systems that give you one way to load your template, with `$$.Microtemplate` you can load templates in three ways:
+
+* From an HTML string, using the 'html' parameter
+* From an URL, using the 'url' parameter
+* From a DOM element, using the 'el' parameter and passing a valid Zepto or jQuery element.
+
+### Syntax
+```html
+<h1>{{title}}</h1>
+<p>{{text}}</p>
+```
+
+### Create a Template
+Creating a template is less difficult than growing a musthash (if you are a man that is):
+
+```js
+// getting a template from a HTML string
+var NoteTemplateFromHTML = new $$.Microtemplate({ html: "<h1>Hello {{username}}</h1>" });
+
+// getting a template from an URL
+var NoteTemplateFromURL = new $$.Microtemplate({ url: "templates/hello.html" });
+
+// getting a template from a DOM element
+var NoteTemplateFromEl = new $$.Microtemplate({ el: $("#template-hello") });
+```
+
+### Render the Template
+
+```js
+// calling the render method and passing a Zepto / jQuery element, prints the template into the DOM
+// This renders '<h1>Hello carlosgavina</h1>'
+NoteTemplateFromHTML.render({
+  el : $("#content"),
+  variables {
+    username : "carlosgavina"
+  }
+});
+```
+
+if you use an URL to get the Template, the render method will only be called when the template is ready
+
+```js
+// will render the template into the dom as soon as the template is ready
+NoteTemplateFromURL.render({ el : $("#content") });
+```
+
+#### Options
+
+* id
+* url
+* html
+* el
+
+#### Methods
+
+* render
+
+
+## Creating a View  `$$.View`
+
+Views give an easy way to manage the content of a section of your DOM.
+
+### Create a View
+
+```js
+var NoteView = $$.View({
+      el : $("#content"),
+      template : new $$.Microtemplate({ html: "<h1>Hello {{username}}</h1>" }),
+    });
+```
 
 ## Using an Api  `$$.Api`
 

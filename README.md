@@ -1,6 +1,6 @@
 # Core.js
 
-__Current Version:__ 0.2.6d
+__Current Version:__ 0.2.8c
 
 A tiny (15kb) and pointless javascript framework for even tinier web apps.
 
@@ -20,6 +20,13 @@ I could say a million reasons why we need another javascript framework, but real
 
 ## Quick Start
 
+Include [core.min.js](core.min.js) in your page, don't forget to add <a href="http://zeptojs.com/">Zepto</a> (Recommended) or <a href="http://jquery.com/">jQuery</a> before.
+
+```html
+<script src="core.min.js"></script>
+```
+
+
 Creating an App in Core.js is faster than eating a peanut, here's how:
 
 ```js
@@ -34,6 +41,9 @@ var NotesApp = new $$.App({
       }
     });
 ```
+
+You are set! Head to the [Documentation](documentation.md) to see how awesome and easy Core.js is. Awesomer than Battman.
+
 
 ## [Documentation](documentation.md)
 
