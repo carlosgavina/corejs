@@ -42,7 +42,7 @@ var NotesApp = new $$.App({
     });
 ```
 
-You are set! Head to the [Documentation](documentation.md) to see how awesome and easy Core.js is. Awesomer than Battman.
+You are set! Head to the [Documentation](documentation.md) to see how awesome and easy Core.js is. _Awesomer_ than Battman.
 
 
 ## [Documentation](documentation.md)
