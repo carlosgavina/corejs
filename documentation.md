@@ -1,6 +1,6 @@
 # Core.js Documentation
 
-__Current Version:__ 0.2.8c
+__Current Version:__ 0.2.10a
 
 
 ## "I want to" index
@@ -279,7 +279,6 @@ To make things even more powerful, Core.js lets you link an Api request to a `$$
 var Note = new $$.Data({
     request: "notes"
   });
-
 
 // With the .push method, the attributes for this $$.Data object are sent by POST
 // to the URL configured in our app in the "Using an Api" example
