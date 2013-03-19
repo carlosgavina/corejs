@@ -1,6 +1,12 @@
 # Core.js Documentation
 
-__Current Version:__ 0.3.1b
+__Current Version:__ 0.3.2
+
+
+## 0.3.2
+
+* pushState added to the Router, turned on by default, this is defined in the App (pushState: true)
+Now you can hide the hash in the url's, example.com/#/user/carlosgavina -> example.com/user/carlosgavina
 
 
 ## 0.3.1b
