@@ -1,6 +1,11 @@
 # Core.js Documentation
 
-__Current Version:__ 0.3
+__Current Version:__ 0.3.1b
+
+
+## 0.3.1b
+
+* fixed a Router bug that prevented variables to pass in some cases
 
 
 ## 0.3
