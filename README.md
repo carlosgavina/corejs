@@ -49,6 +49,11 @@ You are set! Head to the [Documentation](documentation.md) to see how awesome an
 
 I try to have this as documented as possible, but not all features are explained. See [Documentation](documentation.md).
 
+## [Change Log](log.md)
+
+Check updates details in the change log [Change Log](log.md).
+
+
 
 ## Thanks etc.
 
