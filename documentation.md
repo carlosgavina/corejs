@@ -9,8 +9,10 @@ __Current Version:__ 0.3
 * [Use the Router](#catching-router-events)
 * [Manage Data](#using-data-and-local-storage-data)
 * [Use Local Storage](#using-data-and-local-storage-data)
+* [Create a 'Type' of Data (extend Data)](#create-a-type-of-data-extend-data)
 * [Use Templates](#using-templates--microtemplate)
 * [Create a View](#creating-a-view--view)
+* [Create a 'Type' of View (extend View)](#create-a-type-of-view-aka-extending-the-view)
 * [Use an Api](#using-an-api--api)
 
 
@@ -96,6 +98,35 @@ Listening for events on a `$$.Data` object:
 Note.on("Change:title", function( e, d ) {
   // the "title" attribute was changed
 });
+
+```
+
+#### Create a 'Type' of Data (extend Data)
+
+This is useful if you want to use various data objects that share events, methods and other behaviors.
+
+```js
+var User = $$.Data.extend({
+      // events shared by all the views based on this one
+      events : {
+        "Change" : function() {
+          // everytime data is changed this is called
+          console.log("Oh my, the Data changed!");
+        }
+      }
+    });
+
+var user_a  = new User(),
+    user_b  = new User();
+
+user_a.on('change', function() { console.log('Data from User A changed!') });
+
+user_a.set('name', 'charles');
+//'Oh my, the Data changed!' in the console
+//'Data from User A changed!' in the console
+
+user_b.set('name', 'jane');
+//'Oh my, the Data changed!' in the console
 
 ```
 
@@ -197,8 +228,52 @@ Views give an easy way to manage the content of a section of your DOM.
 var NoteView = $$.View({
       el : $("#content"),
       template : new $$.Microtemplate({ html: "<h1>Hello {{username}}</h1>" }),
+      init : function() {
+        console.log("this is a view");
+      }
     });
 ```
+
+#### Create a Type of View, aka extending the View
+
+This is useful if you want to render various views that share events, methods and other behaviors.
+
+```js
+var NoteView = $$.View.extend({
+      // method fired when the view is started
+      init : function() {
+        this.on("SayHi", function() { console.log("Hi!"); })
+      },
+
+      // the html template
+      template : new $$.Microtemplate({ html: "<h1>Hello {{username}}</h1>" }),
+
+      // events shared by all the views based on this one
+      events : {
+        "Template:Rendered" : function() { // code for when a template rendered }
+      }
+
+    });
+
+var newnote   = new NoteView(),
+    othernote = new NoteView();
+
+//'Hi!' in the console
+newnote.trigger('SayHi');
+
+//Hi! in the console
+othernote.trigger('SayHi');
+
+```
+
+
+
+#### Methods:
+
+* Render
+* Update (available after the first Render)
+
+
 
 ## Using an Api  `$$.Api`
 
