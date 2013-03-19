@@ -1,6 +1,10 @@
 # Core.js Documentation
 
-__Current Version:__ 0.3.2
+__Current Version:__ 0.3.2b
+
+## 0.3.2b
+
+* fixed minor bug that prevented the pushState to fire on page load.
 
 
 ## 0.3.2
