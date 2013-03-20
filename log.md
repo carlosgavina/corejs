@@ -1,8 +1,11 @@
 # Core.js Documentation
 
-__Current Version:__ 0.3.2d
+__Current Version:__ 0.3.3
 
 
+## 0.3.3
+
+* Fixed major routing bug, now if pushstate is true, templates are forced to have full url.
 
 
 ## 0.3.2
