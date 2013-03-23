@@ -1,16 +1,23 @@
 # Core.js Documentation
 
-__Current Version:__ 0.3.3
+__Current Version:__ 0.3.3b
 
 
 ## 0.3.3
+
+#### 0.3.3b
+
+* Fixed buf with routing one sized url's ( ex: example.com/settings/ )
+
+
+#### 0.3.3
 
 * Fixed major routing bug, now if pushstate is true, templates are forced to have full url.
 
 
 ## 0.3.2
 
-#### 0.3.2b
+#### 0.3.2c
 
 * Fixed bugs with the router and pushstate in some browsers
 
@@ -20,7 +27,7 @@ __Current Version:__ 0.3.3
 * fixed minor bug that prevented the pushState to fire on page load.
 
 
-#### 0.3
+#### 0.3.2
 
 * pushState added to the Router, turned on by default, this is defined in the App (pushState: true)
 Now you can hide the hash in the url's, example.com/#/user/carlosgavina -> example.com/user/carlosgavina

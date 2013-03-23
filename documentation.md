@@ -1,6 +1,6 @@
 # Core.js Documentation
 
-__Current Version:__ 0.3.3
+__Current Version:__ 0.3.3b
 
 
 ## "I want to" index
