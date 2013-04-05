@@ -42,7 +42,7 @@ You are all set, next lets see how you can listen for Router (url) changes.
 
 ### Catching Router Events
 
-All Core.js objects are Events enabled, a new `$$.App` object stores important global events, such as the Routing, or in english, detects changes in the UL and fires events accordingly.
+All Core.js objects are Events enabled, a new `$$.App` object stores important global events, such as the Routing, or in english, detects changes in the URL and fires events accordingly.
 
 
 ```js
@@ -50,7 +50,7 @@ All Core.js objects are Events enabled, a new `$$.App` object stores important g
 
 NotesApp.on("Router:Default", function( e, data ) {
   // code for the default route, the root for the website ( example.com/ )
-  // this refers to the parent object, NotesApp
+  // this, refers to the parent object, NotesApp
   console.log( this );
 });
 
@@ -85,7 +85,7 @@ var Note = new $$.Data({
 Note.set("title", "My Note Title");
 
 // get the title attribute
-Note.get("title", "My Note Title");
+Note.get("title");
 
 ```
 
